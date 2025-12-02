@@ -20,7 +20,7 @@ pub fn day_one<P: AsRef<Path>>(input: P) -> usize {
             .parse::<usize>()
             .map(|n| n % num_dials)
             .unwrap_or_else(|_| {
-                panic!("invalid instruction on line {line}. Failed to parse number of rotations",)
+                panic!("invalid instruction on line {line}. Failed to parse number of rotations")
             });
 
         match direction {
@@ -30,7 +30,7 @@ pub fn day_one<P: AsRef<Path>>(input: P) -> usize {
                     .checked_sub(num_rotations)
                     .unwrap_or_else(|| num_dials - (num_rotations - pos))
             }
-            _ => panic!("invalid instruction on line {line}. Expected a prefix of 'L' or 'R'",),
+            _ => panic!("invalid instruction on line {line}. Expected a prefix of 'L' or 'R'"),
         }
         pw += usize::from(dial[pos] == 0)
     }
