@@ -5,7 +5,6 @@ pub fn solution<P: AsRef<Path>>(input: P) -> usize {
     let instructions = read_to_string(input_file).expect("failed to read input file");
 
     let num_dials = 100;
-    let dial = (0..num_dials).collect::<Vec<usize>>();
     let mut pos = 50;
     let mut pw = 0;
 
@@ -32,7 +31,7 @@ pub fn solution<P: AsRef<Path>>(input: P) -> usize {
             }
             _ => panic!("invalid instruction on line {line}. Expected a prefix of 'L' or 'R'"),
         }
-        pw += usize::from(dial[pos] == 0)
+        pw += usize::from(pos == 0);
     }
     pw
 }
