@@ -1,6 +1,6 @@
 use std::{fs::read_to_string, path::Path};
 
-pub fn day_one<P: AsRef<Path>>(input: P) -> usize {
+pub fn solution<P: AsRef<Path>>(input: P) -> usize {
     let input_file = input.as_ref();
     let instructions = read_to_string(input_file).expect("failed to read input file");
 
@@ -41,22 +41,22 @@ pub fn day_one<P: AsRef<Path>>(input: P) -> usize {
 mod test {
     use std::path::PathBuf;
 
-    use crate::day_one;
+    use crate::solution;
 
     #[test]
-    fn test_day_one() {
+    fn test_solution() {
         let sample_input = PathBuf::new()
             .join(env!("CARGO_MANIFEST_DIR"))
             .join("test_cases")
             .join("sample.txt");
 
-        assert_eq!(3, day_one(sample_input));
+        assert_eq!(3, solution(sample_input));
 
         let input = PathBuf::new()
             .join(env!("CARGO_MANIFEST_DIR"))
             .join("test_cases")
             .join("input.txt");
 
-        assert_eq!(1011, day_one(input));
+        assert_eq!(1011, solution(input));
     }
 }
