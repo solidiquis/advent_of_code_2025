@@ -59,6 +59,6 @@ mod test {
             .join("test_cases")
             .join("input.txt");
 
-        println!("SOLUTION: {}", solution(input));
+        assert_eq!(23_701_357_374, solution(input));
     }
 }
